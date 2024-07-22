@@ -1,0 +1,218 @@
+@use "../../assets/styles/reusable.all.scss" as *;
+
+
+.container {
+
+    height: 100%;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+
+    .circle {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, $color-2, $color-6);
+        width: 100%;
+        height: 23rem;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        font-size: 3vh;
+        color: $color-4;
+        gap: 1rem;
+    }
+
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+
+
+        .title {
+            color: $color-4;
+            display: flex;
+            justify-content: space-around;
+            font-size: 2vh;
+            .titlehead {
+
+            }
+            .titledate {
+                background-color: rgba($color-4, .3);
+                padding: 0 .5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 3rem;
+                font-size: 1.5vh;
+            }
+        }
+
+
+        .average {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            .averagetitle {
+                font-size: 2vh;
+                color: $color-4;
+
+            }
+
+            .analytics {
+                background-color:$color-4;
+                border-radius: 2rem;
+                max-width: 30rem;
+                width: 100%;
+                height: 32vh;
+                padding: 2vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                
+
+                .measures {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .systolic,
+                    .diastolic,
+                    .pulse {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        font-size: 1.5vh;
+                        font-weight: 600;
+                        
+                        .text {
+                            font-size: 1.7vh;
+                            color: $color-5;
+                            font-weight: 400;
+                        }
+                    }
+                }
+
+                .chart {
+                    height: 18vh;
+                }
+            }
+        }
+
+        .overall {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .overallwrapper {
+                background-color: $color-4;
+                max-width: 30rem;
+                width: 100%;
+                height: 24vh;
+                border-radius: 2rem;
+                padding: 2rem;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 1rem;
+                
+                .overallhead {
+                    display: flex;
+                    gap: 1rem;
+                    
+                    // align-items: center;
+                    .mmhg {
+                        font-size: 2vh;
+                        align-self: center;
+                        display: flex;
+                        flex-direction: column;
+                        font-weight: 600;
+                        align-items: center;
+
+                        .rate {
+                            font-size: 1vh;
+                        }
+                    
+                        .rate {
+                            font-size: 1.5vh;
+                            font-weight: 400;
+                        }
+                    }
+    
+                    .line {
+                        display: block;
+                        background-color: $color-7;
+                        width: .5rem;
+                        height: 8rem;
+                        border-radius: 1rem;
+
+                        
+                    }
+    
+                    .analyze {
+                        display: flex;
+                        flex-direction: column;
+
+                        .state {
+                            font-size: 2.5vh;
+                            font-weight: 600;
+                        }
+                        
+                        .plus {
+                            font-size: 2vh;
+                            font-weight: 600;
+
+                        }
+    
+                        .analyzedate {
+                            margin-top: auto;
+                        }
+                    }
+
+    
+                }
+            
+                .btn {
+                    background-color: $color-3;
+                    border: none;
+                    padding: .5rem;
+                    border-radius: 1rem;
+                    color: $color-4;
+                    font-size: 1.5vh;
+                    t
+
+                    &:hover {
+                        background-color: darken($color-3, 10%);
+                    }
+                }
+            }
+        }
+
+
+        .logo {
+            align-self: center;
+            width: 23vh;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
