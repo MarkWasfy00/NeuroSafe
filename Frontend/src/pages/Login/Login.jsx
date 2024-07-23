@@ -11,20 +11,20 @@ const Login = () => {
     const wave = useRef(null)
    
     useEffect(() => {
-        const hasAnimated = sessionStorage.getItem('hasAnimated');
+        // const hasAnimated = sessionStorage.getItem('hasAnimated');
 
-        if(!hasAnimated) {
-            gsap.to(container.current, { gap: "1rem", duration: 2 });
-            gsap.fromTo(logo.current, { y: -200 }, { y: 0, duration: 1 })
-            gsap.fromTo(inputs.current, { y: 200 }, { y: 0, duration: .5 })
-            gsap.fromTo(login.current, { y: 200 }, { y: 0, duration: 1 })
-            gsap.fromTo(wave.current, { y: 200 }, { y: 0, duration: 1 })
-            sessionStorage.setItem('hasAnimated', 'true');
-        }
+        gsap.fromTo(container.current, { y: 800 }, { y: 0, duration: .5 });
+        // gsap.fromTo(logo.current, { y: -200 }, { y: 0, duration: 1 })
+        // gsap.fromTo(inputs.current, { y: 200 }, { y: 0, duration: .5 })
+        // gsap.fromTo(login.current, { y: 200 }, { y: 0, duration: 1 })
+        // gsap.fromTo(wave.current, { y: 200 }, { y: 0, duration: 1 })
+        // sessionStorage.setItem('hasAnimated', 'true');
+        // if(!hasAnimated) {
+        // }
 
-        return () => {
-            localStorage.setItem('hasAnimated', false);
-        }
+        // return () => {
+        //     localStorage.setItem('hasAnimated', false);
+        // }
     }, [])
 
   return (

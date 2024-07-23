@@ -6,13 +6,18 @@ import Gender from "./pages/Gender/Gender"
 import Health from "./pages/Health/Health"
 import { useEffect } from "react"
 import { updateThemeColor } from "./utils/FilterThemeTag"
+import Result from "./pages/Result/Result"
+import Loader from "./pages/Loading/Loader"
+import Loading from "./pages/Loading/Loading"
 
 const themeColors = {
-  '/': '#ffffff',
+  '/': '#63beb9',
+  '/login': '#ffffff',
   '/home': '#ffffff',
   '/signup': '#ffffff',
   '/gender': '#ffffff',
   '/heart-health': '#63beb9',
+  '/result': '#63beb9',
 };
 
 const ThemeUpdater = () => {
@@ -33,11 +38,14 @@ function App() {
     <>
       <ThemeUpdater />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Loader />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/gender" element={<Gender />} />
         <Route path="/heart-health" element={<Health />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="/test" element={<Loading />} />
       </Routes>
     </>
   )

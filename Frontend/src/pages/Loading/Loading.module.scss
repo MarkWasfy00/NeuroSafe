@@ -1,0 +1,11 @@
+@use "../../assets/styles/reusable.all.scss" as *;
+
+
+
+.container {
+    height: 100%;
+    background: linear-gradient(to bottom, $color-2, $color-6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

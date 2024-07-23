@@ -86,7 +86,7 @@ const Health = () => {
                             <div className={styles.analyzedate}>2024-07-17 17:01</div>
                         </div>
                     </div>
-                    <button className={styles.btn}>Result</button>
+                    <button className={styles.btn} onClick={() => navigate("/result")}>Result</button>
                 </div>
             </div>
             <div className={styles.logo}>
