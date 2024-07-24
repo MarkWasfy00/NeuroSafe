@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import styles from './Login.module.scss'
 import { useEffect, useRef } from 'react'
 import { gsap } from "gsap"
@@ -9,7 +9,9 @@ const Login = () => {
     const login = useRef(null)
     const inputs = useRef(null)
     const wave = useRef(null)
-   
+    const navigate = useNavigate()
+
+
     useEffect(() => {
         // const hasAnimated = sessionStorage.getItem('hasAnimated');
 
@@ -48,7 +50,7 @@ const Login = () => {
             <button className={styles.loginbtn}>Login</button>
             <div className={styles.signup}>
                 <p>{"Don't have an account ?"}</p>
-                <Link to="/signup">Sign Up</Link>
+                <a onClick={() => navigate("/welcome", { replace: true })} >Sign Up</a>
             </div>
         </div>
         <div ref={wave} className={styles.waver}>

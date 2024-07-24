@@ -10,7 +10,7 @@ const Result = () => {
     <main className={styles.container}>
         <div className={styles.circle}></div>
         <div className={styles.navbar}>
-            <div className={styles.back} onClick={() => navigate("/heart-health")} ><IoMdArrowRoundBack /></div>
+            <div className={styles.back} onClick={() => navigate("/heart-health", { replace: true })} ><IoMdArrowRoundBack /></div>
             <div className={styles.navtitle}>Result</div>
         </div>
         <div className={styles.dashboard}>
@@ -19,17 +19,17 @@ const Result = () => {
                     <div className={styles.results}>
                         <div className={styles.systolic}>
                             <div className={styles.text}>Systolic</div>
-                            <div className="">98</div>
+                            <div className={styles.percent}>98</div>
                             <div className={styles.rating}>mmHg</div>
                         </div>
                         <div className={styles.diastolic}>
                             <div className={styles.text}>Diastolic</div>
-                            <div className="">71</div>
+                            <div className={styles.percent}>71</div>
                             <div className={styles.rating}>mmHg</div>
                         </div>
                         <div className={styles.pulse}>
                             <div className={styles.text}>Pulse</div>
-                            <div className="">78</div>
+                            <div className={styles.percent}>78</div>
                             <div className={styles.rating}>BPM</div>
                         </div>
                     </div>

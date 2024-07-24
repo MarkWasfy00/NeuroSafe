@@ -1,16 +1,26 @@
 import lottie from 'lottie-web';
 import styles from './Home.module.scss'
 import { useEffect, useRef, useState } from 'react';
-import { IoIosNotifications } from "react-icons/io";
+// import { IoIosNotifications } from "react-icons/io";
 import { TbReportAnalytics } from "react-icons/tb";
 import { FaStethoscope } from "react-icons/fa";
 import { PiHeartbeatBold } from "react-icons/pi";
 import lungsData from "../../assets/animations/lungs.json"
 import { useNavigate  } from "react-router-dom"
+import ExitWindow from "../../components/ExitWindow"
+import { TbLogout2 } from "react-icons/tb";
 
 const Home = () => {
   const [stress, setStress] = useState(false);
   const navigate = useNavigate();
+  const [logout, setLogout] = useState(false)
+
+  // const [blocker, setBlocker] = useConfirmExit()
+  // let blocker = useBlocker(
+  //   ({ nextLocation }) =>
+  //     nextLocation.pathname !== "/heart-health"
+  // );
+  
 
   const lungsContainer = useRef(null);
 
@@ -39,8 +49,8 @@ const Home = () => {
             </div>
             <div className={styles.profilename}>Hello, Adam!</div>
           </div>
-          <div className={styles.notifier}>
-            <IoIosNotifications />
+          <div className={styles.notifier} onClick={() => setLogout(true)}>
+            <TbLogout2 />
           </div>
         </div>
         <div className={styles.sections}>
@@ -62,7 +72,7 @@ const Home = () => {
                 </div>
                 <div className={styles.oxygenrate}>98/71 <span>mmHg</span></div>
               </div>
-              <div className={styles.heart} onClick={() => navigate("/heart-health")}>
+              <div className={styles.heart} onClick={() =>{navigate("/heart-health", { replace: true }) }}>
                 <div className={styles.heartinfo}>
                   <div className={styles.hearttitle}>Heart Health</div>
                   <div className={styles.heartblocks}>
@@ -94,6 +104,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <ExitWindow state={logout} setState={setLogout} />
     </main>
   )
 }

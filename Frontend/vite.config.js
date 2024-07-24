@@ -12,7 +12,7 @@ export default defineConfig({
       manifest: {
         name: 'NeuroSafe Drive',
         short_name: 'NeuroSafe',
-        description: 'NeuroSafe application that support patients to know their blood stats',
+        description: "An advanced system for monitoring an individual's vital signs, including brain waves, heart rate, respiration rate, and oxygen levels, with a stress detection alert system that activates upon identifying any abnormalities",
         theme_color: '#63beb9',
         icons: [
           {

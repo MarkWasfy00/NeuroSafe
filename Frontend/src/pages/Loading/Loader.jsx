@@ -11,7 +11,7 @@ const Loader = () => {
         // Perform your action here (e.g., checking authentication, fetching data, etc.)
         await new Promise(resolve => setTimeout(resolve, 5000)); // Simulating a delay for the action
         // Redirect to the login page
-        navigate('/login');
+        navigate('/login', { replace: true });
       };
   
       performActionBeforeRedirect();

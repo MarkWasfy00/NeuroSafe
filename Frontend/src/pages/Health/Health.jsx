@@ -7,11 +7,18 @@ import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, ResponsiveContai
 const Health = () => {
     const navigate = useNavigate();
 
+    const error = console.error;
+    console.error = (...args) => {
+    if (/defaultProps/.test(args[0])) return;
+    if (/ React does not/.test(args[0])) return;
+    error(...args);
+    };
+
     const data = [
         {
           name: '71',
           uv: 4000,
-          pv: 95,
+          pv: 71,
           amt: 2400,
         }
       ];
@@ -20,7 +27,7 @@ const Health = () => {
     <main className={styles.container}>
         <div className={styles.circle}></div>
         <div className={styles.navbar}>
-            <div className={styles.back} onClick={() => navigate("/home")} ><IoMdArrowRoundBack /></div>
+            <div className={styles.back} onClick={() => navigate("/home", { replace: true })} ><IoMdArrowRoundBack /></div>
             <div className={styles.navtitle}>Heart Health</div>
         </div>
         <div className={styles.dashboard}>
@@ -58,14 +65,10 @@ const Health = () => {
                                     left: 15,
                                 }}
                                 >
-                                <CartesianGrid strokeDasharray="3 3" verticalCoordinatesGenerator={1} />
-                                {/* <CartesianGrid strokeDasharray="1" /> */}
-                                <XAxis axisLine={false} dataKey="name" tickLine={false}  />
-                                <YAxis axisLine={false} tickLine={false} width={10}/>
-                                {/* <Tooltip /> */}
-                                {/* <Legend /> */}
-                                <Bar shape={<rect rx={10} ry={10} />} dataKey="pv" fill="#abe3b4" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-                            
+                                    <CartesianGrid strokeDasharray="3 3" verticalCoordinatesGenerator={1} />
+                                    <XAxis axisLine={false} dataKey="pv" tickLine={false}  />
+                                    <YAxis axisLine={false} dataKey="pv" tickLine={false} width={10}/>
+                                    <Bar shape={<rect rx={10} ry={10} />} dataKey="pv" fill="#abe3b4" activeBar={<Rectangle fill="pink" stroke="blue" />} />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>
@@ -86,7 +89,7 @@ const Health = () => {
                             <div className={styles.analyzedate}>2024-07-17 17:01</div>
                         </div>
                     </div>
-                    <button className={styles.btn} onClick={() => navigate("/result")}>Result</button>
+                    <button className={styles.btn} onClick={() => navigate("/result", { replace: true })}>Result</button>
                 </div>
             </div>
             <div className={styles.logo}>

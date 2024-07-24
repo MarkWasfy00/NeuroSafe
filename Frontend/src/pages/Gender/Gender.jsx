@@ -11,7 +11,7 @@ const Gender = () => {
 
 
     const goToHomePage = () => {
-        navigate('/home');
+        navigate('/home', { replace: true });
     };
 
     useEffect(() => {

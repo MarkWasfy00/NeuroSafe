@@ -10,7 +10,7 @@ const Signup = () => {
 
 
   const goToGenderPage = () => {
-    navigate('/gender');
+    navigate('/gender', { replace: true });
   };
 
   useEffect(() => {
