@@ -10,7 +10,7 @@ const ExitWindow = ({ state, setState }) => {
         <div className={styles.window} onClick={() => setState(false)}>
             <div className={styles.title}>Are you sure you want to logout ?</div>
             <div className={styles.options}>
-                <div className={styles.yes} onClick={() =>{  navigate('/') }}>Yes</div>
+                <div className={styles.yes} onClick={() =>{  navigate('/', { replace: true }) }}>Yes</div>
                 <div className={styles.no}  onClick={() => { setState(false) }} >No</div>
             </div>
         </div>

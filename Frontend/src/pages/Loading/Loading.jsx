@@ -23,7 +23,9 @@ const Loading = () => {
 
   return (
     <main className={styles.container}>
-      <div ref={loadingContainer} className={styles.gif}></div>
+      <div className={styles.gif}>
+        <img src="/loading.gif" alt="loading" />
+      </div>
     </main>
   )
 }
