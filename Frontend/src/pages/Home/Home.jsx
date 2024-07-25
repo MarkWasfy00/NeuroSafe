@@ -1,20 +1,28 @@
 import lottie from 'lottie-web';
 import styles from './Home.module.scss'
 import { useEffect, useRef, useState } from 'react';
-// import { IoIosNotifications } from "react-icons/io";
-import { TbReportAnalytics } from "react-icons/tb";
-import { FaStethoscope } from "react-icons/fa";
-import { PiHeartbeatBold } from "react-icons/pi";
 import lungsData from "../../assets/animations/lungs.json"
 import { useNavigate  } from "react-router-dom"
-import ExitWindow from "../../components/ExitWindow"
+import { gsap } from "gsap"
+
+import { TbReportAnalytics } from "react-icons/tb";
+import { PiHeartbeatBold } from "react-icons/pi";
+import { FaStethoscope } from "react-icons/fa";
 import { TbLogout2 } from "react-icons/tb";
+import { BiSupport } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { FaMessage } from "react-icons/fa6";
+import { IoMenu } from "react-icons/io5";
 
 const Home = () => {
   const [stress, setStress] = useState(false);
   const navigate = useNavigate();
-  const [logout, setLogout] = useState(false)
-
+  // const [logout, setLogout] = useState(false)
+  const [menu, setMenu] = useState(false)
+  
+  const menuRef = useRef(null)
+  const shadowRef = useRef(null)
+  const itemsRef = useRef(null)
   // const [blocker, setBlocker] = useConfirmExit()
   // let blocker = useBlocker(
   //   ({ nextLocation }) =>
@@ -39,6 +47,35 @@ const Home = () => {
     };
   }, [stress]);
 
+
+  const toggleMenu = () => {
+    if (menu) {
+      closeMenuAnimation()
+      setMenu(false)
+    } else {
+      setMenu(true)
+      openMenuAnimation()
+    }
+  }
+
+  const closeMenu = () => {
+    closeMenuAnimation()
+    setMenu(false)
+  }
+
+  const openMenuAnimation = () => {
+    gsap.fromTo(menuRef.current,{  opacity: 0, top: "-30rem", right: "-30rem" }, { opacity: 1, top: "-8rem", right: "-8rem", duration: 1})
+    gsap.fromTo(shadowRef.current , { opacity: "0"} , { opacity: .5, duration: 1, display: "block" })
+    gsap.fromTo(itemsRef.current , { opacity: "0"} , { opacity: 1, duration: .1 })
+  
+  }
+
+  const closeMenuAnimation = () => {
+    gsap.fromTo(menuRef.current, { opacity: 1, top: "-8rem", right: "-8rem"}, {  opacity: 0, top: "-30rem", right: "-30rem", duration: 1})
+    gsap.fromTo(shadowRef.current , { opacity: .5, duration: 1 }, { opacity: "0", display: "none"})
+    gsap.fromTo(itemsRef.current, { opacity: 1 }, { opacity: "0" , duration: .1})
+  }
+
   return (
     <main className={styles.container}>
       <div className={styles.wrapper}>
@@ -49,8 +86,28 @@ const Home = () => {
             </div>
             <div className={styles.profilename}>Hello, Adam!</div>
           </div>
-          <div className={styles.notifier} onClick={() => setLogout(true)}>
-            <TbLogout2 />
+          <div className={styles.notifier} >
+            <div className={`${styles.menu} ${menu ? styles.on : null}`}>
+              <IoMenu onClick={() => toggleMenu()} />
+            </div>
+            <div ref={menuRef} className={`${styles.circle} `}>
+              <div ref={itemsRef} className={styles.itmsupport}>
+                <div className={styles.itemico}><BiSupport /></div>
+                <div className={styles.itemname}>Support</div>
+              </div>
+              <div ref={itemsRef} className={styles.itmprofile}>
+                <div className={styles.itemico}><CgProfile /></div>
+                <div className={styles.itemname}>Profile</div>
+              </div>
+              <div ref={itemsRef} className={styles.itmmessage}>
+                <div className={styles.itemico}><FaMessage /></div>
+                <div className={styles.itemname}>Message</div>
+              </div>
+              <div ref={itemsRef} className={styles.itmlogout}>
+                <div className={styles.itemico}><TbLogout2 /></div>
+                <div className={styles.itemname}>Logout</div>
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.sections}>
@@ -104,7 +161,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <ExitWindow state={logout} setState={setLogout} />
+      {/* <ExitWindow state={logout} setState={setLogout} /> */}
+      <div ref={shadowRef}  className={`${styles.backshadow}`} onClick={() => closeMenu()}></div>
     </main>
   )
 }

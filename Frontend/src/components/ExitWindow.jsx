@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 const ExitWindow = ({ state, setState }) => {
   const navigate = useNavigate();
-
   return (
     state ? <div className={styles.exit}>
         <div className={styles.window} onClick={() => setState(false)}>

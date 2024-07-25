@@ -5,11 +5,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // gap: 2rem;
     
     
     height: 100%;
     padding: 1rem;
+
 
     .wrapper {
         display: flex;
@@ -55,6 +55,59 @@
                 padding: 1rem;
                 border-radius: 50%;
                 color: $color-5;
+                position: relative;
+
+                .menu {
+                    svg {
+                        position: absolute;
+                        z-index: 100;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                .on {
+                    color: $color-4;
+                }
+
+                .circle {
+                    position: absolute;
+                    background-color: $color-6;
+                    border-radius: 50%;
+                    width: 30rem;
+                    height: 30rem;
+                    top: -30rem;
+                    right: -30rem;
+                    z-index: 99;
+                    padding: 4rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 2rem;
+
+
+                    .itmsupport,
+                    .itmprofile,
+                    .itmmessage,
+                    .itmlogout {
+                        font-size: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        color: $color-4;
+                    }
+
+                    .itmsupport,
+                    .itmlogout {
+                        padding-left: 2rem;
+                    }
+                }
+
+                .hidemenu {
+                    display: none;
+                    
+                }
             }
         }
     
@@ -285,5 +338,18 @@
             }
             
         }
+    }
+
+
+
+    .backshadow {
+        background-color: black;
+        display: none;
+        position: fixed;
+        inset: 0 0 0 0;
+        z-index: 98;
+        opacity: .5;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        opacity: 0;
     }
 }
