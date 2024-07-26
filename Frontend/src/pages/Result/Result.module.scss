@@ -4,12 +4,12 @@
 
 .container {
 
-    height: 100%;
     position: relative;
+    height: 100%;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr;
 
 
     .circle {
@@ -28,15 +28,16 @@
     .navbar {
         display: flex;
         align-items: center;
-        font-size: 3vh;
+        font-size: 2rem;
         color: $color-4;
         gap: 1rem;
     }
 
     .dashboard {
+        height: 100%;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
         
         
         
@@ -47,7 +48,7 @@
             align-items: center;
             
             .measureswrapper {
-                padding: 1rem;
+                padding: 0 1rem;
                 border-radius: 2rem;
                 max-width: 30rem;
                 width: 100%;
@@ -57,7 +58,8 @@
 
                 .results {
                     display: flex;
-                    justify-content: space-between;
+                    // justify-content: space-between;
+                    justify-content: space-around;
                     align-items: center;
                     
 
@@ -73,17 +75,17 @@
                         
                         
                         .text {
-                            font-size: 2.5vh;
+                            font-size: 1.3rem;
                             font-weight: 600;
                         }
 
                         .percent {
-                            font-size: 2vh;
+                            font-size: 1.2rem;
                             font-weight: 600;
                         }
 
                         .rating {
-                            font-size: 1.5vh;
+                            font-size: 1rem;
                             font-weight: 600;
                         }
                     }
@@ -91,7 +93,7 @@
 
                 .date {
                     color: $color-4;
-                    font-size: 1.5vh;
+                    font-size: 1rem;
                 }
 
             }
@@ -108,7 +110,7 @@
             
             .visualizewrapper {
                 background-color: $color-4;
-                padding: 1vh 2.5vh;
+                padding: 1rem 2rem;
                 border-radius: 2rem;
                 max-width: 30rem;
                 width: 100%;
@@ -121,7 +123,7 @@
 
 
                 .visualtitle {
-                    font-size: 2.5vh;
+                    font-size: 2rem;
                     font-weight: 700;
                     color: $color-6;
 
@@ -129,15 +131,15 @@
 
                 .visualinfo {
                     color: black;
-                    font-size: 1.5vh;
+                    font-size: 1rem;
                     font-weight: 600;
 
                 }
 
                 .visual {
                     width: 100%;
-                    padding-top: 2vh;
-                    padding-bottom: 2vh;
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
                     position: relative;
 
 
@@ -176,7 +178,7 @@
             
             .advicewrapper {
                 background-color: $color-4;
-                padding: 1vh 2.5vh;
+                padding: 1rem 2rem;
                 border-radius: 2rem;
                 max-width: 30rem;
                 width: 100%;
@@ -186,12 +188,12 @@
                 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
                 .advicetitle {
-                    font-size: 2vh;
+                    font-size: 1.5rem;
                     font-weight: 700;
                 }
 
                 .pressure {
-                    font-size: 1.5vh;
+                    font-size: 1rem;
                     font-weight: 600;
                     .state {
                         color: $color-6;
@@ -199,14 +201,14 @@
                 }
 
                 .lifestyle {
-                    font-size: 1.5vh;
+                    font-size: 1rem;
                     font-weight: 700;
                     color: $color-6;
 
                 }
 
                 .text {
-                    font-size: 1.5vh;
+                    font-size: 1rem;
                     font-weight: 700;
                     line-height: 3vh;
                 }
@@ -218,7 +220,7 @@
         
         .logo {
             align-self: center;
-            width: 23vh;
+            width: 10rem;
             img {
                 width: 100%;
             }

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 const ExitWindow = ({ state, setState }) => {
   const navigate = useNavigate();
   return (
-    state ? <div className={styles.exit}>
+    state ? <div onClick={() => { setState(false) }} className={styles.exit}>
         <div className={styles.window} onClick={() => setState(false)}>
-            <div className={styles.title}>Are you sure you want to logout ?</div>
+            <div className={styles.title}>Log Out From Your Account ?</div>
             <div className={styles.options}>
                 <div className={styles.yes} onClick={() =>{  navigate('/', { replace: true }) }}>Yes</div>
                 <div className={styles.no}  onClick={() => { setState(false) }} >No</div>

@@ -23,11 +23,11 @@ const Gender = () => {
     <main className={styles.container}>
         <div className={styles.genderphotos}>
             <div className={`${styles.male} ${gender ? styles.clicked: null} `} onClick={() => setGender(true)}>
-                <img src="/male.png" alt="" />
+                <img src={`${gender ? "/male-hover.png": "/male.png"}`} alt="" />
             </div>
 
             <div className={`${styles.female} ${!gender ? styles.clicked: null}`} onClick={() => setGender(false)}>
-                <img src="/female.png" alt="" />
+                <img src={`${gender ? "/female.png": "/female-hover.png"}`} alt="" />
             </div>
         </div>
 

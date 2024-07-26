@@ -10,6 +10,7 @@ import Result from "./pages/Result/Result"
 import Loader from "./pages/Loading/Loader"
 import Loading from "./pages/Loading/Loading"
 import Welcome from "./pages/Welcome/Welcome"
+
 // import useConfirmExit from "./hooks/useConfirmExit"
 // import ExitWindow from "./components/ExitWindow"
 

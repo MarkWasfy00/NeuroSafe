@@ -19,7 +19,7 @@
         align-items: center;
 
         .logoimg {
-            width: 15vh;
+            width: 10rem;
             padding-top: 1rem;
             img {
                 width: 100%;
@@ -27,7 +27,7 @@
         }
 
         .logotitle {
-            font-size: 3vh;
+            font-size: 2rem;
             font-weight: 600;
             background: linear-gradient(to right, $color-3, $color-2);
             background-clip: text;
@@ -49,7 +49,7 @@
         justify-content: center;
         align-items: center;
         gap: 4rem;
-        font-size: 1.6vh;
+        font-size: 1.2rem;
 
         .holder {
             width: 100%;
@@ -77,7 +77,7 @@
             border: none;
             background-color: $color-3;
             color: $color-4;
-            font-size: 2vh;
+            font-size: 1.2rem;
             transition: .5s;
 
             &:hover {
@@ -95,6 +95,7 @@
         height: 10rem;
         bottom: 0;
         left: 0;
+        z-index: -1;
     }
 
 }

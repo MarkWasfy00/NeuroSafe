@@ -17,11 +17,10 @@ const Health = () => {
     const data = [
         {
           name: '71',
-          uv: 4000,
-          pv: 71,
-          amt: 2400,
+          ts: 21,
         }
-      ];
+    ];
+
 
   return (
     <main className={styles.container}>
@@ -66,9 +65,9 @@ const Health = () => {
                                 }}
                                 >
                                     <CartesianGrid strokeDasharray="3 3" verticalCoordinatesGenerator={1} />
-                                    <XAxis axisLine={false} dataKey="pv" tickLine={false}  />
-                                    <YAxis axisLine={false} dataKey="pv" tickLine={false} width={10}/>
-                                    <Bar shape={<rect rx={10} ry={10} />} dataKey="pv" fill="#abe3b4" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+                                    <XAxis axisLine={false} dataKey="ts" tickLine={false}  />
+                                    <YAxis axisLine={false} dataKey="ts" tickLine={false} width={10}/>
+                                    <Bar shape={<rect rx={10} ry={10} />} dataKey="ts" fill="#abe3b4" activeBar={<Rectangle fill="pink" stroke="blue" />} />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>

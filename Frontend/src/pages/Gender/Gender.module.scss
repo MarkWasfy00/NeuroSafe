@@ -9,16 +9,19 @@
     justify-content: start;
     align-items: center;
     gap: 7rem;
-    padding: 15vh 2vh;
+    padding: 15rem 2rem;
 
     .genderphotos {
         display: flex;
         gap: 4rem;
-
+        
 
         .male,
         .female {
-            width: 13vh;
+            width: 10rem;
+            height: 10rem;
+            display: flex;
+            align-items: center;
 
             &:hover {
                 img {
@@ -47,7 +50,7 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        font-size: 2vh;
+        font-size: 1.5rem;
 
         .agetitle {
             color: $color-5;
@@ -70,7 +73,7 @@
         background-color: $color-3;
         border: none;
         border-radius: 2rem;
-        width: 18vh;
+        width: 18rem;
         color: $color-4;
     }
 

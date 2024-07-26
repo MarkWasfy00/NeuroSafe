@@ -2,41 +2,34 @@
 
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    
+    padding: 2rem;
     height: 100%;
-    padding: 1rem;
-
+    
 
     .wrapper {
         display: flex;
         flex-direction: column;
-        // max-width: 33rem;
         height: 100%;
         width: 100%;
+        gap: 1rem;
+
 
         .profilebar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 10vh;
+            
     
             .profile {
                 display: flex;
                 align-items: center;
                 gap: 1rem;
-                height: 100%;
-                // padding: 2rem 0;
     
                 .profilepic {
                     font-size: 3vh;
                     border-radius: 50%;
                     color: $color-5;
-                    width: 7vh;
-                    height: 100%;
+                    width: 4rem;
                     img {
                         height: 100%;
                         object-fit: contain;
@@ -45,13 +38,13 @@
                 }
         
                 .profilename {
-                    font-size: 1.5vh;
+                    font-size: 1rem;
                     font-weight: 600;
                 }
             }
     
             .notifier {
-                font-size: 3vh;
+                font-size: 3rem;
                 padding: 1rem;
                 border-radius: 50%;
                 color: $color-5;
@@ -122,17 +115,18 @@
                 display: flex;
                 align-items: center;
                 gap: 1rem;
-                font-size: 3.5vh;
+                font-size: 2.5rem;
                 font-weight: 700;
                 color: rgba($color-5, .8);
             }
     
             .grid {
-                height: 100%;
                 display: grid;
-                grid-template-columns: 15vh 1fr;
+                height: 100%;
+                grid-template-columns: 10rem 1fr;
                 column-gap: 1rem;
                 row-gap: 1.5rem;
+
     
     
                 .respiration {
@@ -142,7 +136,7 @@
                     flex-direction: column;
                     justify-content: space-between;
                     align-content: center;
-                    font-size: 1.7vh;
+                    font-size: 1.2rem;
                     font-weight: 600;
                     text-align: center;
                     border-radius: 2rem;
@@ -163,7 +157,7 @@
     
     
                     .oxygentitle {
-                        font-size: 3vh;
+                        font-size: 2rem;
                         font-weight: 600;
                         padding-right: 5rem;
                         color: rgba(black, .7);
@@ -171,7 +165,7 @@
     
                     .oxygenimg {
                         position: absolute;
-                        width: 16vh;
+                        width: 10rem;
                         right: 0rem;
                         bottom:  2rem;
                         
@@ -183,11 +177,11 @@
     
                     .oxygenrate {
                         margin-top: auto;
-                        font-size: 2vh;
+                        font-size: 1.2rem;
                         color: rgba(black, .8);
                         font-weight: 600;
                         span {
-                            font-size: 1.2vh;
+                            font-size: .7rem;
     
                         }
                     }
@@ -201,19 +195,18 @@
                     grid-column-end: 4;
                     padding: 2rem;
                     border-radius: 2rem;
-                    display: flex;
-                    align-items: center;
     
                     .heartinfo {
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         gap: 2rem;
+                        width: fit-content;
+                        align-items: center;
     
                         .hearttitle {
-                            font-size: 3vh;
+                            font-size: 2rem;
                             font-weight: 600;
-                            
                         }
     
                         .heartblocks {
@@ -227,7 +220,7 @@
                                 background-color: rgba($color-5, .2);
                                 border-radius: 2rem;
                                 width: 7rem;
-                                height: 7rem;
+                                height: 8rem;
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
@@ -236,8 +229,8 @@
     
     
                                 .heartblockimg {
-                                    font-size: 1.6vh;
-                                    padding: .7rem;
+                                    font-size: 1.5rem;
+                                    // padding: .7rem;
                                     color: $color-5;
                                     background-color: $color-4;
                                     border-radius: 50%;
@@ -253,22 +246,22 @@
         
                                 .heartblocktitle {
                                     font-weight: 700;
-                                    font-size: .7vh;
+                                    font-size: .8rem;
                                 }
         
                                 .heartblockrate {
-        
+                                    font-size: 1rem;
                                 }
                             }
                         }
     
                     }
                     .heartimg {
-                        width: 23vh;
+                        width: 8rem;
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
-                        right: 0rem;
+                        right: 2rem;
                         img {
                             width: 100%;
                         }
@@ -287,27 +280,49 @@
                     padding: 1rem;
                     
                     
-                    .stresstitle {
-                        font-size: 1.7vh;
-                        font-weight: 600;
-                        color: $color-4;
-                        padding-left: 2rem;
-                    }
-                    
+                   
                     .stressinfo {
                         display: flex;
                         align-items: center;
                         justify-content: space-around;
                         
+                        
+                        
+                        
                         .stressimg {
-                            width: 18rem;
+                            position: relative;
+                            width: 11rem;
+                            height: 11rem;
+                            display: flex;
+                            justify-content: center;
+
+ 
+                            .stresstitle {
+                                font-size: 1.8rem;
+                                font-weight: 600;
+                                color: $color-4;
+                                
+                                .left {
+                                    position: absolute;
+                                    left: -1.5rem;
+                                }
+
+                                .right {
+                                    position: absolute;
+                                    right: -1.5rem;
+                                }
+                            }
+
                             img {
                                 width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                
                             }
                         }
         
                         .stresslevel {
-                            font-size: 2.5vh;
+                            font-size: 2rem;
                             color: $color-4;
                             font-weight: 700;
         
@@ -319,21 +334,26 @@
                 .normal {
                     background-color: $color-6;
 
-                    .stressinfo {
-                        .stressimg {
-                            width: 18vh;
-                        }
-                    }
+                    // .stressinfo {
+                    //     .stressimg {
+                    //         width: 10rem;
+
+                           
+                    //     }
+                    // }
                 }
                 .danger {
                     background-color:#dc3545;
 
                     
-                    .stressinfo {
-                        .stressimg {
-                            width: 10vh;
-                        }
-                    }
+                    // .stressinfo {
+                    //     .stressimg {
+                    //         width: 10rem;
+                    //         margin-left: -.5rem;
+
+                            
+                    //     }
+                    // }
                 }
             }
             
@@ -349,7 +369,10 @@
         inset: 0 0 0 0;
         z-index: 98;
         opacity: .5;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        opacity: 0;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    }
+
+    .on { 
+        display: block;
     }
 }
